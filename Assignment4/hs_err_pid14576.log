@@ -1,0 +1,229 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 553856 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:390), pid=14576, tid=0x0000000000006714
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_181-b13) (build 1.8.0_181-b13)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.181-b13 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000019af3800):  JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=26388, stack(0x000000001a3b0000,0x000000001a4b0000)]
+
+Stack: [0x000000001a3b0000,0x000000001a4b0000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+Current CompileTask:
+C2:   1043 1400   !   4       sun.misc.URLClassPath$JarLoader::getResource (353 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000019b93800 JavaThread "Service Thread" daemon [_thread_blocked, id=7660, stack(0x000000001a6b0000,0x000000001a7b0000)]
+  0x0000000019aff000 JavaThread "C1 CompilerThread3" daemon [_thread_in_native, id=7904, stack(0x000000001a5b0000,0x000000001a6b0000)]
+  0x0000000019af8800 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=17488, stack(0x000000001a4b0000,0x000000001a5b0000)]
+=>0x0000000019af3800 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=26388, stack(0x000000001a3b0000,0x000000001a4b0000)]
+  0x0000000019af0000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=26480, stack(0x000000001a2b0000,0x000000001a3b0000)]
+  0x0000000019aee800 JavaThread "Attach Listener" daemon [_thread_blocked, id=2944, stack(0x000000001a1b0000,0x000000001a2b0000)]
+  0x0000000017bfe800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=2052, stack(0x000000001a0b0000,0x000000001a1b0000)]
+  0x0000000019ae1800 JavaThread "Finalizer" daemon [_thread_blocked, id=23816, stack(0x0000000019ec0000,0x0000000019fc0000)]
+  0x0000000002df9000 JavaThread "Reference Handler" daemon [_thread_blocked, id=2820, stack(0x00000000199c0000,0x0000000019ac0000)]
+  0x0000000002d04800 JavaThread "main" [_thread_in_Java, id=16376, stack(0x0000000002c00000,0x0000000002d00000)]
+
+Other Threads:
+  0x0000000017be9000 VMThread [stack: 0x00000000198c0000,0x00000000199c0000] [id=9644]
+  0x0000000019ba6000 WatcherThread [stack: 0x000000001a7b0000,0x000000001a8b0000] [id=25460]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 36864K, used 32640K [0x00000000d6c00000, 0x00000000d9500000, 0x0000000100000000)
+  eden space 31744K, 90% used [0x00000000d6c00000,0x00000000d87f1c88,0x00000000d8b00000)
+  from space 5120K, 78% used [0x00000000d8b00000,0x00000000d8eee508,0x00000000d9000000)
+  to   space 5120K, 0% used [0x00000000d9000000,0x00000000d9000000,0x00000000d9500000)
+ ParOldGen       total 84992K, used 16K [0x0000000084400000, 0x0000000089700000, 0x00000000d6c00000)
+  object space 84992K, 0% used [0x0000000084400000,0x0000000084404000,0x0000000089700000)
+ Metaspace       used 10902K, capacity 11306K, committed 11392K, reserved 1058816K
+  class space    used 1232K, capacity 1345K, committed 1408K, reserved 1048576K
+
+Card table byte_map: [0x00000000121c0000,0x00000000125a0000] byte_map_base: 0x0000000011d9e000
+
+Marking Bits: (ParMarkBitMap*) 0x0000000068452d00
+ Begin Bits: [0x0000000013040000, 0x0000000014f30000)
+ End Bits:   [0x0000000014f30000, 0x0000000016e20000)
+
+Polling page: 0x00000000011d0000
+
+CodeCache: size=245760Kb used=5177Kb max_used=5177Kb free=240582Kb
+ bounds [0x0000000002e00000, 0x0000000003320000, 0x0000000011e00000]
+ total_blobs=1889 nmethods=1535 adapters=266
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 1.035 Thread 0x0000000019aff000 nmethod 1523 0x0000000003307a10 code [0x0000000003307bc0, 0x0000000003308328]
+Event: 1.037 Thread 0x0000000019aff000 1524       3       java.util.jar.JarVerifier$VerifierStream::close (30 bytes)
+Event: 1.037 Thread 0x0000000019aff000 nmethod 1524 0x00000000033084d0 code [0x0000000003308640, 0x00000000033088e8]
+Event: 1.038 Thread 0x0000000019aff000 1525       3       java.lang.reflect.Modifier::isProtected (12 bytes)
+Event: 1.038 Thread 0x0000000019aff000 nmethod 1525 0x0000000003308990 code [0x0000000003308ae0, 0x0000000003308c70]
+Event: 1.038 Thread 0x0000000019aff000 1526       3       java.lang.ClassNotFoundException::<init> (7 bytes)
+Event: 1.039 Thread 0x0000000019aff000 nmethod 1526 0x0000000003308cd0 code [0x0000000003308e40, 0x0000000003309088]
+Event: 1.039 Thread 0x0000000019aff000 1528       3       jdk.internal.org.objectweb.asm.MethodWriter::<init> (268 bytes)
+Event: 1.040 Thread 0x0000000019aff000 nmethod 1528 0x0000000003309390 code [0x00000000033095c0, 0x000000000330a2a8]
+Event: 1.040 Thread 0x0000000019aff000 1529       3       jdk.internal.org.objectweb.asm.MethodWriter::visitMaxs (1159 bytes)
+
+GC Heap History (2 events):
+Event: 0.562 GC heap before
+{Heap before GC invocations=1 (full 0):
+ PSYoungGen      total 36864K, used 31744K [0x00000000d6c00000, 0x00000000d9500000, 0x0000000100000000)
+  eden space 31744K, 100% used [0x00000000d6c00000,0x00000000d8b00000,0x00000000d8b00000)
+  from space 5120K, 0% used [0x00000000d9000000,0x00000000d9000000,0x00000000d9500000)
+  to   space 5120K, 0% used [0x00000000d8b00000,0x00000000d8b00000,0x00000000d9000000)
+ ParOldGen       total 84992K, used 0K [0x0000000084400000, 0x0000000089700000, 0x00000000d6c00000)
+  object space 84992K, 0% used [0x0000000084400000,0x0000000084400000,0x0000000089700000)
+ Metaspace       used 6280K, capacity 6466K, committed 6784K, reserved 1056768K
+  class space    used 685K, capacity 775K, committed 896K, reserved 1048576K
+Event: 0.565 GC heap after
+Heap after GC invocations=1 (full 0):
+ PSYoungGen      total 36864K, used 4025K [0x00000000d6c00000, 0x00000000d9500000, 0x0000000100000000)
+  eden space 31744K, 0% used [0x00000000d6c00000,0x00000000d6c00000,0x00000000d8b00000)
+  from space 5120K, 78% used [0x00000000d8b00000,0x00000000d8eee508,0x00000000d9000000)
+  to   space 5120K, 0% used [0x00000000d9000000,0x00000000d9000000,0x00000000d9500000)
+ ParOldGen       total 84992K, used 16K [0x0000000084400000, 0x0000000089700000, 0x00000000d6c00000)
+  object space 84992K, 0% used [0x0000000084400000,0x0000000084404000,0x0000000089700000)
+ Metaspace       used 6280K, capacity 6466K, committed 6784K, reserved 1056768K
+  class space    used 685K, capacity 775K, committed 896K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 0.890 Thread 0x0000000002d04800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000000000325d758 method=java.util.stream.AbstractPipeline.<init>(Ljava/util/stream/AbstractPipeline;I)V @ 66
+Event: 0.890 Thread 0x0000000002d04800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000000000325d758 method=java.util.stream.AbstractPipeline.<init>(Ljava/util/stream/AbstractPipeline;I)V @ 66
+Event: 0.892 Thread 0x0000000002d04800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000315e944 method=sun.misc.MetaIndex.mayContain(Ljava/lang/String;)Z @ 38
+Event: 0.955 Thread 0x0000000002d04800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000032a2260 method=java.util.Objects.nonNull(Ljava/lang/Object;)Z @ 1
+Event: 1.011 Thread 0x0000000002d04800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000000000324d0b4 method=java.util.stream.Sink$ChainedReference.cancellationRequested()Z @ 4
+Event: 1.011 Thread 0x0000000002d04800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000000000324d0b4 method=java.util.stream.Sink$ChainedReference.cancellationRequested()Z @ 4
+Event: 1.011 Thread 0x0000000002d04800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000000000324d0b4 method=java.util.stream.Sink$ChainedReference.cancellationRequested()Z @ 4
+Event: 1.011 Thread 0x0000000002d04800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000000000324d0b4 method=java.util.stream.Sink$ChainedReference.cancellationRequested()Z @ 4
+Event: 1.012 Thread 0x0000000002d04800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000032730a8 method=java.lang.String.lastIndexOf([CII[CIII)I @ 118
+Event: 1.012 Thread 0x0000000002d04800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000003114774 method=java.lang.String.lastIndexOf([CII[CIII)I @ 118
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0.427 Thread 0x0000000002d04800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000d801fc70) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.428 Thread 0x0000000002d04800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000d80238e0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.428 Thread 0x0000000002d04800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000d8023af0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.513 Thread 0x0000000002d04800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x00000000d879cc20) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\methodHandles.cpp, line 1167]
+Event: 0.516 Thread 0x0000000002d04800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x00000000d87a9f90) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\methodHandles.cpp, line 1167]
+Event: 0.599 Thread 0x0000000002d04800 Exception <a 'java/lang/IncompatibleClassChangeError': Found class java.lang.Object, but interface was expected> (0x00000000d6e8e060) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot\src\share\vm\interpreter\linkResolver.cp
+Event: 0.844 Thread 0x0000000002d04800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$identity$2(Ljava/lang/Object;)Ljava/lang/Object;> (0x00000000d7d0c2d8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot\src\share\vm\interpreter\linkResolv
+Event: 0.845 Thread 0x0000000002d04800 Exception <a 'java/lang/IncompatibleClassChangeError': Found class java.lang.Object, but interface was expected> (0x00000000d7d118a0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot\src\share\vm\interpreter\linkResolver.cp
+Event: 0.944 Thread 0x0000000002d04800 Exception <a 'java/io/FileNotFoundException'> (0x00000000d82de090) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 1.011 Thread 0x0000000002d04800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$isEqual$3(Ljava/lang/Object;Ljava/lang/Object;)Z> (0x00000000d8608d18) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u181\11358\hotspot\src\share\vm\interpreter\linkResolv
+
+Events (10 events):
+Event: 1.039 loading class org/apache/tools/ant/types/Resource
+Event: 1.039 loading class org/apache/tools/ant/types/Resource done
+Event: 1.040 loading class org/apache/tools/ant/types/Resource
+Event: 1.040 loading class org/apache/tools/ant/types/Resource done
+Event: 1.040 loading class org/apache/tools/ant/types/Resource
+Event: 1.040 loading class org/apache/tools/ant/types/Resource done
+Event: 1.041 loading class org/apache/tools/ant/util/ResourceUtils$ResourceSelectorProvider
+Event: 1.041 loading class org/apache/tools/ant/util/ResourceUtils$ResourceSelectorProvider done
+Event: 1.041 loading class org/apache/tools/ant/util/ResourceUtils$ResourceSelectorProvider
+Event: 1.041 loading class org/apache/tools/ant/util/ResourceUtils$ResourceSelectorProvider done
+
+
+Dynamic libraries:
+0x00007ff63df90000 - 0x00007ff63dfc7000 	C:\Program Files\Java\jre1.8.0_181\bin\javaw.exe
+0x00007ff99e690000 - 0x00007ff99e871000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff99c000000 - 0x00007ff99c0b2000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff99b670000 - 0x00007ff99b8e3000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff99c7e0000 - 0x00007ff99c881000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff99bea0000 - 0x00007ff99bf3e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff99bf40000 - 0x00007ff99bf9b000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff99caa0000 - 0x00007ff99cbc4000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff99c910000 - 0x00007ff99caa0000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff99ac50000 - 0x00007ff99ac70000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff99be60000 - 0x00007ff99be88000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff99aab0000 - 0x00007ff99ac42000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff99ac70000 - 0x00007ff99ad0f000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff99b970000 - 0x00007ff99ba6a000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff98f6a0000 - 0x00007ff98f909000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.17134.407_none_fb449d63306391e9\COMCTL32.dll
+0x00007ff99bb30000 - 0x00007ff99be52000 	C:\WINDOWS\System32\combase.dll
+0x00007ff99b8f0000 - 0x00007ff99b96a000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff99e630000 - 0x00007ff99e65d000 	C:\WINDOWS\System32\IMM32.DLL
+0x0000000068560000 - 0x0000000068632000 	C:\Program Files\Java\jre1.8.0_181\bin\msvcr100.dll
+0x0000000067c30000 - 0x00000000684d2000 	C:\Program Files\Java\jre1.8.0_181\bin\server\jvm.dll
+0x00007ff99c890000 - 0x00007ff99c898000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ff997fe0000 - 0x00007ff998003000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff9906f0000 - 0x00007ff9906fa000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff9878a0000 - 0x00007ff9878a9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff99c8a0000 - 0x00007ff99c90c000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff997e10000 - 0x00007ff997e3a000 	C:\WINDOWS\SYSTEM32\winmmbase.dll
+0x00007ff99aa60000 - 0x00007ff99aaa9000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x0000000068990000 - 0x000000006899f000 	C:\Program Files\Java\jre1.8.0_181\bin\verify.dll
+0x0000000068960000 - 0x0000000068989000 	C:\Program Files\Java\jre1.8.0_181\bin\java.dll
+0x0000000068940000 - 0x0000000068956000 	C:\Program Files\Java\jre1.8.0_181\bin\zip.dll
+0x00007ff99d120000 - 0x00007ff99e55f000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ff99c730000 - 0x00007ff99c7d9000 	C:\WINDOWS\System32\shcore.dll
+0x00007ff99ad70000 - 0x00007ff99b47d000 	C:\WINDOWS\System32\windows.storage.dll
+0x00007ff99bfa0000 - 0x00007ff99bff1000 	C:\WINDOWS\System32\shlwapi.dll
+0x00007ff99aa10000 - 0x00007ff99aa21000 	C:\WINDOWS\System32\kernel.appcore.dll
+0x00007ff99a9f0000 - 0x00007ff99aa0f000 	C:\WINDOWS\System32\profapi.dll
+0x00007ff99a9a0000 - 0x00007ff99a9ec000 	C:\WINDOWS\System32\powrprof.dll
+0x00007ff99aa30000 - 0x00007ff99aa3a000 	C:\WINDOWS\System32\FLTLIB.DLL
+0x0000000068920000 - 0x000000006893a000 	C:\Program Files\Java\jre1.8.0_181\bin\net.dll
+0x00007ff99a1c0000 - 0x00007ff99a226000 	C:\WINDOWS\system32\mswsock.dll
+0x0000000068900000 - 0x0000000068911000 	C:\Program Files\Java\jre1.8.0_181\bin\nio.dll
+
+VM Arguments:
+jvm_args: -Dant.home=C:\Users\Rose Song\.p2\pool\plugins\org.apache.ant_1.10.3.v20180417-1627 -Dant.library.dir=C:\Users\Rose Song\.p2\pool\plugins\org.apache.ant_1.10.3.v20180417-1627\lib -Djava.library.path=C:\Users\Rose Song\eclipse\java-photon\eclipse;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_181/bin/server;C:/Program Files/Java/jre1.8.0_181/bin;C:/Program Files/Java/jre1.8.0_181/lib/amd64;C:\Python27\;C:\Python27\Scripts;C:\ProgramData\Boxstarter;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Java\jdk1.8.0_181\bin;C:\Users\Rose Song\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\ANT\apache-ant-1.10.5\bin;C:\Users\Rose Song\AppData\Roaming\npm;C:\Users\Rose Song\AppData\Local\GitHubDesktop\bin;C:\WINDOWS\system32;;.;C:\Users\Rose%20Song\eclipse\java-photon\eclipse\configuration\org.eclipse.osgi\421\0\.cp -Dfile.encoding=Cp1252 
+java_command: org.eclipse.ant.internal.launching.remote.InternalAntRunner -Dorg.eclipse.ant.core.ANT_PROCESS_ID=1544032590957 -Declipse.connect.port=62679 -Dant.home=C:\Users\Rose Song\.p2\pool\plugins\org.apache.ant_1.10.3.v20180417-1627 -logger org.eclipse.ant.internal.launching.remote.logger.RemoteAntBuildLogger -inputhandler org.eclipse.ant.internal.ui.antsupport.inputhandler.ProxyInputHandler -buildfile C:\Users\Rose Song\eclipse-workspace\Assignment4\build.xml
+java_class_path (initial): C:\Program Files\Java\jre1.8.0_181\lib\resources.jar;C:\Program Files\Java\jre1.8.0_181\lib\rt.jar;C:\Program Files\Java\jre1.8.0_181\lib\jsse.jar;C:\Program Files\Java\jre1.8.0_181\lib\jce.jar;C:\Program Files\Java\jre1.8.0_181\lib\charsets.jar;C:\Program Files\Java\jre1.8.0_181\lib\jfr.jar;C:\Program Files\Java\jre1.8.0_181\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jre1.8.0_181\lib\ext\cldrdata.jar;C:\Program Files\Java\jre1.8.0_181\lib\ext\dnsns.jar;C:\Program Files\Java\jre1.8.0_181\lib\ext\jaccess.jar;C:\Program Files\Java\jre1.8.0_181\lib\ext\jfxrt.jar;C:\Program Files\Java\jre1.8.0_181\lib\ext\localedata.jar;C:\Program Files\Java\jre1.8.0_181\lib\ext\nashorn.jar;C:\Program Files\Java\jre1.8.0_181\lib\ext\sunec.jar;C:\Program Files\Java\jre1.8.0_181\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jre1.8.0_181\lib\ext\sunmscapi.jar;C:\Program Files\Java\jre1.8.0_181\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jre1.8.0_181\lib\ext\zipfs.jar;C:\Users\Rose Song\.p2\pool\plugins\org.apache.ant_1.10.3.v20180417-1627\lib\ant-antlr.jar;C:\Users\Rose Song\.p2\pool\plugins\org.apache.ant_1.10.3.v20180417-1627\lib\ant-apache-bcel.jar;C:\Users\Rose Song\.p2\pool\plugins\org.apache.ant_1.10.3.v20180417-1627\lib\ant-apache-bsf.jar;C:\Users\Rose Song\.p2\pool\plugins\org.apache.ant_1.10.3.v20180417-1627\lib\ant-apache-log4j.jar;C:\Users\Rose Song\.p2\pool\plugins\org.apache.ant_1.10.3.v20180417-1627\lib\ant-apache-oro.jar;C:\Users\Rose Song\.p2\pool\plugins\org.apache.ant_1.10.3.v20180417-1627\lib\ant-apache-regexp.jar;C:\Users\Rose Song\.p2\pool\plugins\org.apache.ant_1.10.3.v20180417-1627\lib\ant-apache-resolver.jar;C:\Users\Rose Song\.p2\pool\plugins\org.apache.ant_1.10.3.v20180417-1627\lib\ant-apache-xalan2.jar;C:\Users\Rose Song\.p2\pool\plugins\org.apache.ant_1.10.3.v20180417-1627\lib\ant-commons-logging.jar;C:\Users\Rose Song\.p2\pool\plugins\org.apache.ant_1.10.3.v20180417-1627\lib\ant-commons-net.jar;C:\Users\Rose Song\.p2\poo
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_181
+PATH=C:/Program Files/Java/jre1.8.0_181/bin/server;C:/Program Files/Java/jre1.8.0_181/bin;C:/Program Files/Java/jre1.8.0_181/lib/amd64;C:\Python27\;C:\Python27\Scripts;C:\ProgramData\Boxstarter;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Java\jdk1.8.0_181\bin;C:\Users\Rose Song\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\ANT\apache-ant-1.10.5\bin;C:\Users\Rose Song\AppData\Roaming\npm;C:\Users\Rose Song\AppData\Local\GitHubDesktop\bin;C:\WINDOWS\system32;
+USERNAME=Rose Song
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 17134 (10.0.17134.1)
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 8109768k(2671488k free), swap 23531716k(4308k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.181-b13) for windows-amd64 JRE (1.8.0_181-b13), built on Jul  7 2018 04:01:33 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Wed Dec 05 09:56:32 2018
+elapsed time: 1 seconds (0d 0h 0m 1s)
+
